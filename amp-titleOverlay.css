@@ -20,7 +20,9 @@
     position: absolute;
     overflow: hidden;
     z-index: 5;
-    font-size: 350%;
+    font-family: 'Segoe UI';
+    font-weight: lighter;
+    font-size: 250%;
     margin: 30px;
 }
 
