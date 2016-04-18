@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AMP Content Title</title>
+    <meta name="description" content="Azure Media Player Content Title plugin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--*****START OF Azure Media Player scripts*****-->
+    <!--Note: DO NOT USE the "latest" folder in production. Replace "latest" with a version number like "1.0.0"-->
+    <!--EX:<script src="//amp.azure.net/libs/amp/1.0.0/azuremediaplayer.min.js"></script>-->
+    <!--Azure Media Player versions can be queried from //amp.azure.net/libs/amp/latest/docs/changelog.html-->
+    <link href="http://amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+    <script src="http://amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+    <!--*****END OF Azure Media Player scripts*****-->
+    <!--*****START OF Azure Media Player content title plugin scripts*****-->
+    <link href="plugins/contentTitle/amp-contenttitle.css" rel="stylesheet">
+    <script src="plugins/contentTitle/amp-contenttitle.js"></script>
+    <!--*****END OF Azure Media Player content title plugin scripts*****-->
+</head>
+
+<body>
+    <h1>Content Title Plugin Sample</h1>
+
+    <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" controls autoplay width="640"
+           height="400" poster="" data-setup='{ "nativeControlsForTouch": false, "logo": { "enabled": false }, "plugins": { "contentTitle": { "name": "Azure Media Services Overview", "horizontalPosition": "left", "verticalPosition": "top" } } }'
+           tabindex="0">
+        <source src="http://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest"
+                type="application/vnd.ms-sstr+xml" />
+        <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+    </video>
+
+    <footer>
+        <br />
+        <p>&copy; Southworks 2016</p>
+    </footer>
+</body>
+
+</html>
