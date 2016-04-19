@@ -16,8 +16,8 @@
     <script src="http://amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
     <!--*****END OF Azure Media Player scripts*****-->
     <!--*****START OF Azure Media Player content title plugin scripts*****-->
-    <link href="plugins/contentTitle/amp-contenttitle.css" rel="stylesheet">
-    <script src="plugins/contentTitle/amp-contenttitle.js"></script>
+    <link href="amp-titleOverlay.css" rel="stylesheet">
+    <script src="amp-titleOverlay.js"></script>
     <!--*****END OF Azure Media Player content title plugin scripts*****-->
 </head>
 
@@ -25,7 +25,7 @@
     <h1>Content Title Plugin Sample</h1>
 
     <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" controls autoplay width="640"
-           height="400" poster="" data-setup='{ "nativeControlsForTouch": false, "logo": { "enabled": false }, "plugins": { "contentTitle": { "name": "Azure Media Services Overview", "horizontalPosition": "left", "verticalPosition": "top" } } }'
+           height="400" poster="" data-setup='{ "nativeControlsForTouch": false, "logo": { "enabled": false }, "plugins": { "contentTitle": { "name": "Azure Media Services Overview", "horizontalPosition": "left", "verticalPosition": "center" } } }'
            tabindex="0">
         <source src="http://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest"
                 type="application/vnd.ms-sstr+xml" />

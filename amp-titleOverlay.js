@@ -1,18 +1,4 @@
-﻿// The MIT License
-//
-// Copyright (c) 2016 Southworks
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files 
-// (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge,
-// publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do 
-// so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
-// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+﻿
 
 (function (mediaPlayer) {
     "use strict";
@@ -30,11 +16,11 @@
                 videoElement = player.el();
 
             if (horizontalPosition === 'center') {
-                position = (videoElement.clientWidth / 2) - (logoSpan.clientWidth / 2);
+                position = (videoElement.clientWidth / 2) - (logoSpan.parentElement.clientWidth / 2);
             }
 
             if (horizontalPosition === 'right') {
-                position = videoElement.clientWidth - logoSpan.clientWidth;
+                position = videoElement.clientWidth - logoSpan.parentElement.clientWidth - 1;
             }
 
             return position;
@@ -42,14 +28,16 @@
 
         function getLogoVerticalPosition(logoSpan, verticalPosition) {
             var position = 0, // verticalPosition === 'top' (or invalid value)
-                videoElement = player.el();
+                videoElement = player.el(),
+                controlBarHeight = player.controlBar.el().clientHeight || 31,
+                progressControlHeight = player.controlBar.progressControl.el().clientHeight || 12;
 
             if (verticalPosition === 'middle') {
-                position = (videoElement.clientHeight / 2) - (logoSpan.clientHeight / 2);
+                position = (videoElement.clientHeight / 2) - (logoSpan.parentElement.clientHeight / 2) - (controlBarHeight / 2) - (progressControlHeight / 2);
             }
 
             if (verticalPosition === 'bottom') {
-                position = videoElement.clientHeight - logoSpan.clientHeight;
+                position = videoElement.clientHeight - logoSpan.parentElement.clientHeight - controlBarHeight - progressControlHeight;
             }
 
             return position;
@@ -58,7 +46,7 @@
         function updateContentTitleMaxSize(logoElement, logoSpan) {
             // Update image max size acording video size
             var videoElement = player.el();
-            if ((videoElement.clientHeight < logoSpan.clientHeight) || (videoElement.clientWidth < logoSpan.clientWidth)) {
+            if ((videoElement.clientHeight < logoSpan.parentElement.clientHeight) || (videoElement.clientWidth < logoSpan.parentElement.clientWidth)) {
                 logoSpan.style.maxHeight = videoElement.clientHeight + 'px';
                 logoSpan.style.maxWidth = videoElement.clientWidth + 'px';
             } else {
@@ -83,6 +71,8 @@
         }
 
         function showContentTitle() {
+            updateContentTitle();
+
             player.contentTitle.removeClass("vjs-user-inactive");
             player.contentTitle.addClass("vjs-user-active");
         }
@@ -102,11 +92,16 @@
         mediaPlayer.ContentTitle.prototype.createEl = function () {
             var el = vjs.Component.prototype.createEl.call(this, 'div', { className: contentTitleCssClass });
             el.style.opacity = opacity;
-
+            el.onload = function() { 
+                updateContentTitle(); 
+            };
+            
             var span = vjs.createEl('span', {});
             span.innerText = name;
-            span.onload = updateContentTitle;
-
+            span.onload = function() { 
+                updateContentTitle(); 
+            };
+            
             el.appendChild(span);
 
             this.container = el;
@@ -120,10 +115,16 @@
             var contentTitle = new mediaPlayer.ContentTitle(player);
 
             player.contentTitle = player.addChild(contentTitle);
+            
             player.on(mediaPlayer.eventName.fullscreenchange, updateContentTitle);
             player.on("resize", updateContentTitle);
+            
             player.on("useractive", showContentTitle);
             player.on("userinactive", hideContentTitle);
+                        
+            updateContentTitle();
+            
+            setTimeout(updateContentTitle, 0);
         });
     });
 }(window.amp));
