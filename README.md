@@ -15,8 +15,8 @@ This plugin overlays text over the player in a configurable position when the vi
 ## Getting Started
 Include the plugin CSS/javascript*after* the AMP script in the `<head>` of your html page:
 
-```<link href="amp-titleOverlay" rel="stylesheet">```<br />
-```<script src="amp-titleOverlay"></script>```
+```<link href="amp-titleOverlay.css" rel="stylesheet">```<br />
+```<script src="amp-titleOverlay.js"></script>```
 
 See example.html for how to enable the plugin 
 ## Options
@@ -27,4 +27,4 @@ Currently supported JSON options:
 
 
 ##To-Do
- 
+ add a larger drop shadow on mouse hover 
