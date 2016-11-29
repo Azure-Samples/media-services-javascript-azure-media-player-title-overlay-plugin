@@ -3,13 +3,15 @@
 (function (mediaPlayer) {
     "use strict";
 
-    mediaPlayer.plugin('contentTitle', function (options) {
+    mediaPlayer.plugin('titleOverlay', function (options) {
         var player = this,
             name = !!options && !!options.name ? options.name : '',
             opacity = !!options && !!options.opacity ? options.opacity : 1,
             horizontalPosition = !!options && !!options.horizontalPosition ? options.horizontalPosition : 'left',
             verticalPosition = !!options && !!options.verticalPosition ? options.verticalPosition : 'top',
-            contentTitleCssClass = 'amp-content-title';
+            contentTitleCssClass = 'amp-title-overlay';
+
+        var Component = mediaPlayer.getComponent('Component');
 
         function getLogoHorizontalPosition(logoSpan, horizontalPosition) {
             var position = 0, // horizontalPosition === 'left' (or invalid value)
@@ -83,20 +85,20 @@
         }
 
         // Create Logo
-        mediaPlayer.ContentTitle = vjs.Component.extend({
+        mediaPlayer.ContentTitle = amp.extend(Component, {
             init: function (player, options) {
-                vjs.Component.call(this, player, options);
+                Component.call(this, player, options);
             }
         });
 
         mediaPlayer.ContentTitle.prototype.createEl = function () {
-            var el = vjs.Component.prototype.createEl.call(this, 'div', { className: contentTitleCssClass });
+            var el = Component.prototype.createEl.call(this, 'div', { className: contentTitleCssClass });
             el.style.opacity = opacity;
             el.onload = function() { 
                 updateContentTitle(); 
             };
             
-            var span = vjs.createEl('span', {});
+            var span = videojs.createEl('span', {});
             span.innerText = name;
             span.onload = function() { 
                 updateContentTitle(); 
