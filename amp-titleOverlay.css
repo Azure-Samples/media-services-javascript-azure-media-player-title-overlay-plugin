@@ -1,4 +1,4 @@
-ï»¿/*
+﻿/*
     The MIT License
     
     Copyright (c) 2016 Southworks
@@ -16,21 +16,21 @@
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-.amp-default-skin .amp-title-overlay {
+.amp-default-skin .amp-content-title {
     position: absolute;
     overflow: hidden;
     z-index: 5;
     font-family: 'Segoe UI';
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 250%;
     margin: 30px;
 }
 
-    .amp-default-skin .amp-title-overlay span {
+    .amp-default-skin .amp-content-title span {
         text-shadow: rgba(0, 0, 0, 0.8) 1px 1px 4px;
     }
 
-.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay {
+.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-content-title {
     display: block;
     visibility: hidden;
     opacity: 0;
@@ -40,7 +40,7 @@
     transition: visibility 1s,opacity 1s;
 }
 
-.vjs-audio.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay {
+.vjs-audio.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-content-title {
     opacity: 1;
     visibility: visible;
 }
