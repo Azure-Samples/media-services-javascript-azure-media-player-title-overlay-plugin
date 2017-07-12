@@ -19,7 +19,9 @@ Include the plugin CSS/javascript *after* the AMP script in the `<head>` of your
 ```<script src="amp-titleOverlay.js"></script>```
 
 See example.html for how to enable the plugin 
+
 ## Options
+
 Currently supported JSON options: 
 "name": "your chosen overlay text",
 "horizontal Position": "left", [or center or right] 
@@ -27,6 +29,6 @@ Currently supported JSON options:
 
 
 ##To-Do
--  add a larger drop shadow on mouse hover 
--  change typeface to Segoe UI Light
--  update plugin to work with AMP 2.0 
+- []add a larger drop shadow on mouse hover 
+- [x]change typeface to Segoe UI Light
+- [x]update plugin to work with AMP 2.0 
