@@ -31,7 +31,7 @@ Currently supported JSON options:
 "verticalPosition": "top" [or center of bottom]
 
 
-##To-Do
+## To-Do
 - [ ] add a larger drop shadow on mouse hover 
 - [x] change typeface to Segoe UI Light
 - [x] update plugin to work with AMP 2.0 
