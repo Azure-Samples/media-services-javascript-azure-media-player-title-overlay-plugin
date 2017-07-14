@@ -16,7 +16,7 @@
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-.amp-default-skin .amp-title-overlay {
+.amp-default-skin .amp-title-overlay { /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
     position: absolute;
     overflow: hidden;
     z-index: 5;
@@ -26,11 +26,11 @@
     margin: 30px;
 }
 
-    .amp-default-skin .amp-title-overlay span {
+    .amp-default-skin .amp-title-overlay span {  /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
         text-shadow: rgba(0, 0, 0, 0.8) 1px 1px 4px;
     }
 
-.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay {
+.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay {  /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
     display: block;
     visibility: hidden;
     opacity: 0;
@@ -40,7 +40,7 @@
     transition: visibility 1s,opacity 1s;
 }
 
-.vjs-audio.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay {
+.vjs-audio.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay { /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
     opacity: 1;
     visibility: visible;
 }
