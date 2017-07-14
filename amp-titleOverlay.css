@@ -30,7 +30,7 @@
         text-shadow: rgba(0, 0, 0, 0.8) 1px 1px 4px;
     }
 
-.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay {  /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
+.amp-default-skin.vjs-user-inactive .vjs-has-started.vjs-playing .amp-title-overlay {  /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
     display: block;
     visibility: hidden;
     opacity: 0;
@@ -39,8 +39,7 @@
     -o-transition: visibility 1s,opacity 1s;
     transition: visibility 1s,opacity 1s;
 }
-
-.vjs-audio.amp-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .amp-title-overlay { /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
+.vjs-audio.amp-default-skin.vjs-user-inactive .vjs-has-started.vjs-playing .amp-title-overlay { /* change ".amp-default-skin"  to .amp-flush-skin if you want to use the plugin with the flush skin*/
     opacity: 1;
     visibility: visible;
 }
