@@ -6,11 +6,11 @@ author:
 # Media Services: Title Overlay Plugin for Azure Media Player
 
 
-##Information
+## Information
 
 Attributions:  Southworks 2016
 
-#Introduction
+# Introduction
 
 This plugin overlays text over the player in a configurable position when the viewer hovers over it. If mouse is inactive or located outside the context of the player, the text disappears. 
 
