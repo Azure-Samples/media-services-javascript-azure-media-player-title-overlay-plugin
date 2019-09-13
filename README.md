@@ -1,8 +1,15 @@
 ---
-services: media-services
-platforms: javascript
-author: 
+page_type: sample
+languages:
+- javascript
+- html
+products:
+- azure
+description: "This plugin overlays text over the player in a configurable position when the viewer hovers over it. "
+urlFragment: media-services-javascript-azure-media-player-title-overlay-plugin
 ---
+
+
 # Media Services: Title Overlay Plugin for Azure Media Player
 
 
