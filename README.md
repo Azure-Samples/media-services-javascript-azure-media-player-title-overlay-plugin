@@ -5,8 +5,8 @@ languages:
 - html
 products:
 - azure
-description: "This plugin overlays text over the player in a configurable position when the viewer hovers over it. "
-urlFragment: media-services-javascript-azure-media-player-title-overlay-plugin
+description: "This plugin overlays text over the player in a configurable position when the viewer hovers over it."
+urlFragment: media-services-js-sample-overlay
 ---
 
 
